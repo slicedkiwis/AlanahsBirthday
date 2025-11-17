@@ -1,0 +1,212 @@
+.final-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.floating-hearts-final {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart-float {
+  position: absolute;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 157, 0.5));
+}
+
+.final-content {
+  text-align: center;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 800px;
+  position: relative;
+}
+
+.sparkle-container {
+  margin-bottom: 2rem;
+}
+
+.sparkle-icon {
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  animation: sparkle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.final-title {
+  font-family: Arial, sans-serif;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 3px 30px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.heart-divider {
+  margin: 2rem auto;
+  filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.6));
+  animation: pulse-heart 2s ease-in-out infinite;
+}
+
+@keyframes pulse-heart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.final-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.final-message-text {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.message-para {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
+
+.message-para:last-child {
+  margin-bottom: 0;
+}
+
+.message-para.special {
+  font-weight: 600;
+  color: #ff6b9d;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.final-signature {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.final-signature p {
+  margin: 0.5rem 0;
+}
+
+.signature-name {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.star-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.restart-button {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ff6b9d;
+  color: #ff6b9d;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.restart-button:hover {
+  background: #ff6b9d;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+.bottom-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 600px 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .final-title {
+    font-size: 2.5rem;
+  }
+
+  .final-subtitle {
+    font-size: 2rem;
+  }
+
+  .final-message-text {
+    padding: 1.5rem;
+  }
+
+  .message-para {
+    font-size: 1rem;
+  }
+
+  .message-para.special {
+    font-size: 1.1rem;
+  }
+
+  .signature-name {
+    font-size: 1.5rem;
+  }
+
+  .sparkle-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
