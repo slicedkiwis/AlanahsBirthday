@@ -5,26 +5,26 @@ import MapView from './components/MapView';
 import MemoryTimeline from './components/MemoryTimeline';
 import FinalMessage from './components/FinalMessage';
 import MusicPlayer from './components/MusicPlayer';
-import ApiKeyTest from './components/ApiKeyTest';
+// import ApiKeyTest from './components/ApiKeyTest';
 
 import { Heart } from 'lucide-react';
 import { extractMetadata } from './components/LocationExtractor';
 import './App.css';
 
-// Images are now served from public/images folder
-const kanpeWholeNight = '/images/4Kanpe-the-whole-night.jpeg';
-const apartment = '/images/Apartment.jpeg';
-const beachTrip = '/images/Beach-trip.jpeg';
-const birthdayTrip = '/images/Birthday-trip.jpeg';
-const escaperoom = '/images/escaperoom.jpeg';
-const firstTripPanama = '/images/First-trip-panama.jpeg';
-const jacksonvilleLock = '/images/jacksonville-lock.jpeg';
-const jacksonville = '/images/Jacksonville.jpeg';
-const konmpaLineDancing = '/images/konmpa-and-line-dancing-at-ARJs.jpeg';
-const myroom = '/images/myroom.jpeg';
-const paintingPark = '/images/Painting-park.jpeg';
-const panamaWineTasting = '/images/Panama-wine-tasting.jpeg';
-const askedGirlfriend = '/images/when-i-asked-you-to-be-my-girlfriend.jpeg'; 
+// Using placeholder images for now
+const kanpeWholeNight = 'https://picsum.photos/400/300?random=1';
+const apartment = 'https://picsum.photos/400/300?random=2';
+const beachTrip = 'https://picsum.photos/400/300?random=3';
+const birthdayTrip = 'https://picsum.photos/400/300?random=4';
+const escaperoom = 'https://picsum.photos/400/300?random=5';
+const firstTripPanama = 'https://picsum.photos/400/300?random=6';
+const jacksonvilleLock = 'https://picsum.photos/400/300?random=7';
+const jacksonville = 'https://picsum.photos/400/300?random=8';
+const konmpaLineDancing = 'https://picsum.photos/400/300?random=9';
+const myroom = 'https://picsum.photos/400/300?random=10';
+const paintingPark = 'https://picsum.photos/400/300?random=11';
+const panamaWineTasting = 'https://picsum.photos/400/300?random=12';
+const askedGirlfriend = 'https://picsum.photos/400/300?random=13'; 
 
 function App() {
   const [currentView, setCurrentView] = useState('welcome');
@@ -236,7 +236,6 @@ function App() {
 
   return (
     <div className="App">
-      <ApiKeyTest />
       <MusicPlayer />
 
       
