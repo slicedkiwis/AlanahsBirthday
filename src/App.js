@@ -11,20 +11,20 @@ import { Heart } from 'lucide-react';
 import { extractMetadata } from './components/LocationExtractor';
 import './App.css';
 
-// Using placeholder images from a reliable CDN
-const kanpeWholeNight = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop';
-const apartment = 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop';
-const beachTrip = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop';
-const birthdayTrip = 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=300&fit=crop';
-const escaperoom = 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop';
-const firstTripPanama = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop';
-const jacksonvilleLock = 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop';
-const jacksonville = 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop';
-const konmpaLineDancing = 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=300&fit=crop';
-const myroom = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop';
-const paintingPark = 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop';
-const panamaWineTasting = 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop';
-const askedGirlfriend = 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop'; 
+// Using your actual images from public/images folder
+const kanpeWholeNight = '/images/4Kanpe-the-whole-night.jpeg';
+const apartment = '/images/Apartment.jpeg';
+const beachTrip = '/images/Beach-trip.jpeg';
+const birthdayTrip = '/images/Birthday-trip.jpeg';
+const escaperoom = '/images/escaperoom.jpeg';
+const firstTripPanama = '/images/First-trip-panama.jpeg';
+const jacksonvilleLock = '/images/jacksonville-lock.jpeg';
+const jacksonville = '/images/Jacksonville.jpeg';
+const konmpaLineDancing = '/images/konmpa-and-line-dancing-at-ARJs.jpeg';
+const myroom = '/images/myroom.jpeg';
+const paintingPark = '/images/Painting-park.jpeg';
+const panamaWineTasting = '/images/Panama-wine-tasting.jpeg';
+const askedGirlfriend = '/images/when-i-asked-you-to-be-my-girlfriend.jpeg'; 
 
 function App() {
   const [currentView, setCurrentView] = useState('welcome');
