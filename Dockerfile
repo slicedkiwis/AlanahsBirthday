@@ -24,7 +24,11 @@ FROM nginx:alpine
 # Copy built app to nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Copy nginx config (optional)
+# Ensure public folder contents are in the right place
+COPY --from=build /app/public/images /usr/share/nginx/html/images
+COPY --from=build /app/public/*.mp3 /usr/share/nginx/html/
+
+# Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080

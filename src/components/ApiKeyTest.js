@@ -7,11 +7,29 @@ function ApiKeyTest() {
   const [showTestImage, setShowTestImage] = useState(false);
   
   const testMusic = () => {
+    setMusicTest('Testing...');
     const audio = new Audio('/chopin-nocturne-op9-no2.mp3');
+    
     audio.addEventListener('loadstart', () => setMusicTest('Loading...'));
-    audio.addEventListener('canplay', () => setMusicTest('Can play'));
-    audio.addEventListener('error', (e) => setMusicTest(`Error: ${e.message}`));
-    audio.load();
+    audio.addEventListener('canplay', () => setMusicTest('✅ Can play'));
+    audio.addEventListener('canplaythrough', () => setMusicTest('✅ Ready'));
+    audio.addEventListener('error', (e) => {
+      console.error('Audio error:', e);
+      setMusicTest(`❌ Error: ${e.type}`);
+    });
+    audio.addEventListener('abort', () => setMusicTest('❌ Aborted'));
+    
+    // Test if file exists first
+    fetch('/chopin-nocturne-op9-no2.mp3', { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          setMusicTest(`File exists (${response.status}), loading audio...`);
+          audio.load();
+        } else {
+          setMusicTest(`❌ File not found (${response.status})`);
+        }
+      })
+      .catch(err => setMusicTest(`❌ Fetch error: ${err.message}`));
   };
   
   const testImage = () => {
