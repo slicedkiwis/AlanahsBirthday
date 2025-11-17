@@ -18,7 +18,7 @@ ENV REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyDTyBgvYaBVGYJR0jZixVMJf-kbbHaIuFs
 # Build the app
 RUN npm run build
 
-# Production stage
+# Production stage - rebuild to fix images
 FROM nginx:alpine
 
 # Copy built app to nginx
