@@ -24,7 +24,7 @@ const konmpaLineDancing = 'https://images.unsplash.com/photo-1547036967-23d11aac
 const myroom = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop';
 const paintingPark = 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop';
 const panamaWineTasting = 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop';
-const askedGirlfriend = 'https://images.unsplash.com/photo-1518621012118-1d2cc6b3d49a?w=400&h=300&fit=crop'; 
+const askedGirlfriend = 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop'; 
 
 function App() {
   const [currentView, setCurrentView] = useState('welcome');
