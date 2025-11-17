@@ -30,6 +30,10 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Copy entire public folder contents to serve static assets
 COPY public /usr/share/nginx/html/
 
+# Set correct permissions for Nginx user
+RUN chown -R nginx:nginx /usr/share/nginx/html
+RUN chmod -R 755 /usr/share/nginx/html
+
 # Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
