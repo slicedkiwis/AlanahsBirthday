@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AlanahsBirthday/static/css/main.e95fb975.css",
+    "main.js": "/AlanahsBirthday/static/js/main.dfad92eb.js",
+    "index.html": "/AlanahsBirthday/index.html",
+    "main.e95fb975.css.map": "/AlanahsBirthday/static/css/main.e95fb975.css.map",
+    "main.dfad92eb.js.map": "/AlanahsBirthday/static/js/main.dfad92eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e95fb975.css",
+    "static/js/main.dfad92eb.js"
+  ]
+}
