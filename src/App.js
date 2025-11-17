@@ -151,9 +151,25 @@ function App() {
           'when-i-asked-you-to-be-my-girlfriend.jpeg': { location: { lat: 30.91326388888889, lng: -83.24968611111112 }, date: 'May 4, 2025', city: 'Valdosta, GA' }
         };
         
-        const memoriesWithMetadata = memoryData.map((memory) => {
-          const imageName = memory.image.replace('/images/', '');
-          const metadata = imageMetadata[imageName] || {
+        const memoriesWithMetadata = memoryData.map((memory, index) => {
+          // Map by memory index since we're using placeholder images
+          const metadataArray = [
+            { location: { lat: 30.842744444444442, lng: -83.28402777777778 }, date: 'May 5, 2025', city: 'Valdosta, GA' },
+            { location: { lat: 37.20643888888889, lng: -80.39548611111111 }, date: 'September 24, 2025', city: 'Blacksburg, VA' },
+            { location: { lat: 30.180633333333333, lng: -85.81552222222221 }, date: 'May 14, 2025', city: 'Panama City Beach, FL' },
+            { location: { lat: 27.993380555555557, lng: -82.37041388888888 }, date: 'July 24, 2025', city: 'Tampa, FL' },
+            { location: { lat: 30.866255555555558, lng: -83.28556944444445 }, date: 'April 26, 2025', city: 'Valdosta, GA' },
+            { location: { lat: 30.209197222222222, lng: -85.62031666666665 }, date: 'May 14, 2025', city: 'Panama City Beach, FL' },
+            { location: { lat: 30.323533333333334, lng: -81.66711388888889 }, date: 'June 19, 2025', city: 'Jacksonville, FL' },
+            { location: { lat: 30.436977777777777, lng: -81.72753888888889 }, date: 'August 7, 2025', city: 'Jacksonville, FL' },
+            { location: { lat: 30.842744444444442, lng: -83.28409444444445 }, date: 'June 7, 2025', city: 'Valdosta, GA' },
+            { location: { lat: 30.928066666666666, lng: -83.32229722222222 }, date: 'May 25, 2025', city: 'Valdosta, GA' },
+            { location: { lat: 30.91326388888889, lng: -83.24971111111111 }, date: 'May 4, 2025', city: 'Valdosta, GA' },
+            { location: { lat: 30.187997222222222, lng: -85.7803888888889 }, date: 'May 28, 2025', city: 'Panama City Beach, FL' },
+            { location: { lat: 30.91326388888889, lng: -83.24968611111112 }, date: 'May 4, 2025', city: 'Valdosta, GA' }
+          ];
+          
+          const metadata = metadataArray[index] || {
             location: { lat: 30.4518, lng: -84.27277 },
             date: 'Date Unknown',
             city: 'Tallahassee, FL'

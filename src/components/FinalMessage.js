@@ -5,6 +5,8 @@ import './FinalMessage.css';
 
 function FinalMessage({ onRestart }) {
   const [showMessage, setShowMessage] = useState(false);
+  
+  console.log('FinalMessage rendered, onRestart:', typeof onRestart);
 
   useEffect(() => {
     const timer = setTimeout(() => {
