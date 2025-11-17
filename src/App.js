@@ -134,34 +134,34 @@ function App() {
         }
       ];
 
-        // Add real locations based on memory context
+        // Hardcoded metadata extracted from actual image files with geocoded cities
+        const imageMetadata = {
+          '4Kanpe-the-whole-night.jpeg': { location: { lat: 30.842744444444442, lng: -83.28402777777778 }, date: 'May 5, 2025', city: 'Valdosta, GA' },
+          'Apartment.jpeg': { location: { lat: 37.20643888888889, lng: -80.39548611111111 }, date: 'September 24, 2025', city: 'Blacksburg, VA' },
+          'Beach-trip.jpeg': { location: { lat: 30.180633333333333, lng: -85.81552222222221 }, date: 'May 14, 2025', city: 'Panama City Beach, FL' },
+          'Birthday-trip.jpeg': { location: { lat: 27.993380555555557, lng: -82.37041388888888 }, date: 'July 24, 2025', city: 'Tampa, FL' },
+          'escaperoom.jpeg': { location: { lat: 30.866255555555558, lng: -83.28556944444445 }, date: 'April 26, 2025', city: 'Valdosta, GA' },
+          'First-trip-panama.jpeg': { location: { lat: 30.209197222222222, lng: -85.62031666666665 }, date: 'May 14, 2025', city: 'Panama City Beach, FL' },
+          'jacksonville-lock.jpeg': { location: { lat: 30.323533333333334, lng: -81.66711388888889 }, date: 'June 19, 2025', city: 'Jacksonville, FL' },
+          'Jacksonville.jpeg': { location: { lat: 30.436977777777777, lng: -81.72753888888889 }, date: 'August 7, 2025', city: 'Jacksonville, FL' },
+          'konmpa-and-line-dancing-at-ARJs.jpeg': { location: { lat: 30.842744444444442, lng: -83.28409444444445 }, date: 'June 7, 2025', city: 'Valdosta, GA' },
+          'myroom.jpeg': { location: { lat: 30.928066666666666, lng: -83.32229722222222 }, date: 'May 25, 2025', city: 'Valdosta, GA' },
+          'Painting-park.jpeg': { location: { lat: 30.91326388888889, lng: -83.24971111111111 }, date: 'May 4, 2025', city: 'Valdosta, GA' },
+          'Panama-wine-tasting.jpeg': { location: { lat: 30.187997222222222, lng: -85.7803888888889 }, date: 'May 28, 2025', city: 'Panama City Beach, FL' },
+          'when-i-asked-you-to-be-my-girlfriend.jpeg': { location: { lat: 30.91326388888889, lng: -83.24968611111112 }, date: 'May 4, 2025', city: 'Valdosta, GA' }
+        };
+        
         const memoriesWithMetadata = memoryData.map((memory) => {
-          // Map memories to real locations based on titles and context
-          const getLocationData = (title) => {
-            if (title.includes('Jacksonville')) {
-              return { location: { lat: 30.3322, lng: -81.6557 }, city: 'Jacksonville, FL' };
-            }
-            if (title.includes('Panama')) {
-              return { location: { lat: 8.9824, lng: -79.5199 }, city: 'Panama City, Panama' };
-            }
-            if (title.includes('Beach') || title.includes('Birthday Trip')) {
-              return { location: { lat: 27.9506, lng: -82.4572 }, city: 'Tampa, FL' };
-            }
-            if (title.includes('Apartment') || title.includes('Room') || title.includes('Kanpe') || 
-                title.includes('Escape') || title.includes('Konmpa') || title.includes('Painting') || 
-                title.includes('Girlfriend')) {
-              return { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL' };
-            }
-            // Default to Valdosta for any others
-            return { location: { lat: 30.8327, lng: -83.2785 }, city: 'Valdosta, GA' };
+          const imageName = memory.image.replace('/images/', '');
+          const metadata = imageMetadata[imageName] || {
+            location: { lat: 30.4518, lng: -84.27277 },
+            date: 'Date Unknown',
+            city: 'Tallahassee, FL'
           };
-          
-          const locationData = getLocationData(memory.title);
           
           return {
             ...memory,
-            ...locationData,
-            date: `${new Date(2022, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`
+            ...metadata
           };
         });
 
