@@ -8,19 +8,20 @@ import MusicPlayer from './components/MusicPlayer';
 
 import { Heart } from 'lucide-react';
 import './App.css';
-import kanpeWholeNight from './res/4Kanpe-the-whole-night.jpeg'
-import apartment from './res/Apartment.jpeg'
-import beachTrip from './res/Beach-trip.jpeg'
-import birthdayTrip from './res/Birthday-trip.jpeg'
-import escaperoom from './res/escaperoom.jpeg'
-import firstTripPanama from './res/First-trip-panama.jpeg'
-import jacksonvilleLock from './res/jacksonville-lock.jpeg'
-import jacksonville from './res/Jacksonville.jpeg'
-import konmpaLineDancing from './res/konmpa-and-line-dancing-at-ARJs.jpeg'
-import myroom from './res/myroom.jpeg'
-import paintingPark from './res/Painting-park.jpeg'
-import panamaWineTasting from './res/Panama-wine-tasting.jpeg'
-import askedGirlfriend from './res/when-i-asked-you-to-be-my-girlfriend.jpeg'
+// Images are now served from public/images folder
+const kanpeWholeNight = '/images/4Kanpe-the-whole-night.jpeg';
+const apartment = '/images/Apartment.jpeg';
+const beachTrip = '/images/Beach-trip.jpeg';
+const birthdayTrip = '/images/Birthday-trip.jpeg';
+const escaperoom = '/images/escaperoom.jpeg';
+const firstTripPanama = '/images/First-trip-panama.jpeg';
+const jacksonvilleLock = '/images/jacksonville-lock.jpeg';
+const jacksonville = '/images/Jacksonville.jpeg';
+const konmpaLineDancing = '/images/konmpa-and-line-dancing-at-ARJs.jpeg';
+const myroom = '/images/myroom.jpeg';
+const paintingPark = '/images/Painting-park.jpeg';
+const panamaWineTasting = '/images/Panama-wine-tasting.jpeg';
+const askedGirlfriend = '/images/when-i-asked-you-to-be-my-girlfriend.jpeg';
 import { extractMetadata } from './components/LocationExtractor'; 
 
 function App() {
