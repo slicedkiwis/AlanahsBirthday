@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import './MusicPlayer.css';
-import chopinNocturne from '../res/chopin-nocturne-op9-no2.mp3.mp3';
+// Music file is now served from public folder
+const chopinNocturne = '/chopin-nocturne-op9-no2.mp3.mp3';
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(true);
