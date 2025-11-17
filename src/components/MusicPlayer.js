@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import './MusicPlayer.css';
 // Music file is now served from public folder
-const chopinNocturne = '/chopin-nocturne-op9-no2.mp3.mp3';
+const chopinNocturne = '/chopin-nocturne-op9-no2.mp3';
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(true);

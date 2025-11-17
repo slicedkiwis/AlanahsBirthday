@@ -5,6 +5,7 @@ import MapView from './components/MapView';
 import MemoryTimeline from './components/MemoryTimeline';
 import FinalMessage from './components/FinalMessage';
 import MusicPlayer from './components/MusicPlayer';
+import ApiKeyTest from './components/ApiKeyTest';
 
 import { Heart } from 'lucide-react';
 import { extractMetadata } from './components/LocationExtractor';
@@ -232,6 +233,7 @@ function App() {
 
   return (
     <div className="App">
+      <ApiKeyTest />
       <MusicPlayer />
 
       
