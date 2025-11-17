@@ -7,7 +7,9 @@ import FinalMessage from './components/FinalMessage';
 import MusicPlayer from './components/MusicPlayer';
 
 import { Heart } from 'lucide-react';
+import { extractMetadata } from './components/LocationExtractor';
 import './App.css';
+
 // Images are now served from public/images folder
 const kanpeWholeNight = '/images/4Kanpe-the-whole-night.jpeg';
 const apartment = '/images/Apartment.jpeg';
@@ -21,8 +23,7 @@ const konmpaLineDancing = '/images/konmpa-and-line-dancing-at-ARJs.jpeg';
 const myroom = '/images/myroom.jpeg';
 const paintingPark = '/images/Painting-park.jpeg';
 const panamaWineTasting = '/images/Panama-wine-tasting.jpeg';
-const askedGirlfriend = '/images/when-i-asked-you-to-be-my-girlfriend.jpeg';
-import { extractMetadata } from './components/LocationExtractor'; 
+const askedGirlfriend = '/images/when-i-asked-you-to-be-my-girlfriend.jpeg'; 
 
 function App() {
   const [currentView, setCurrentView] = useState('welcome');
