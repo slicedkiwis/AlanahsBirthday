@@ -15,6 +15,9 @@ COPY . .
 # Set API key directly
 ENV REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyDTyBgvYaBVGYJR0jZixVMJf-kbbHaIuFs
 
+# Forces Webpack to use absolute paths
+ENV PUBLIC_URL=/
+
 # Build the app
 RUN npm run build
 
