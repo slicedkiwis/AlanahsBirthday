@@ -24,9 +24,8 @@ FROM nginx:alpine
 # Copy built app to nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Copy public files directly from source (React build doesn't always copy everything)
-COPY public/images /usr/share/nginx/html/images
-COPY public/*.mp3 /usr/share/nginx/html/
+# Copy entire public folder contents to serve static assets
+COPY public /usr/share/nginx/html/
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf

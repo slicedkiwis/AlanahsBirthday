@@ -20,7 +20,14 @@ steps:
 
   # Build Docker image using the full repo WITH LFS
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/alanahs-birthday:$COMMIT_SHA', 'fullrepo']
+    args: [
+      'build', 
+      '-t', 
+      'gcr.io/$PROJECT_ID/alanahs-birthday:$COMMIT_SHA', 
+      '-f', 
+      'fullrepo/Dockerfile', 
+      'fullrepo'
+    ]
   
   # Push the image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
