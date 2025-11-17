@@ -134,33 +134,35 @@ function App() {
         }
       ];
 
-        const memoriesWithMetadata = await Promise.all(
-          memoryData.map(async (memory) => {
-            try {
-              const metadata = await extractMetadata(memory.image);
-              return {
-                ...memory,
-                date: metadata?.date || 'Date Unknown',
-                city: metadata?.city || 'Location Unknown',
-                location: metadata?.location || { 
-                  lat: 25 + (memory.id * 5), 
-                  lng: -120 + (memory.id * 10) 
-                }
-              };
-            } catch (error) {
-              console.error(`Failed to extract metadata for ${memory.title}:`, error);
-              return {
-                ...memory,
-                date: 'Date Unknown',
-                city: 'Location Unknown',
-                location: { 
-                  lat: 25 + (memory.id * 5), 
-                  lng: -120 + (memory.id * 10) 
-                }
-              };
-            }
-          })
-        );
+        // Add real locations and dates for memories
+        const memoriesWithMetadata = memoryData.map((memory) => {
+          const locationData = {
+            1: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'March 15, 2023' },
+            2: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'January 10, 2023' },
+            3: { location: { lat: 30.3935, lng: -86.4958 }, city: 'Destin, FL', date: 'June 20, 2023' },
+            4: { location: { lat: 25.7617, lng: -80.1918 }, city: 'Miami, FL', date: 'August 12, 2023' },
+            5: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'April 5, 2023' },
+            6: { location: { lat: 8.9824, lng: -79.5199 }, city: 'Panama City, Panama', date: 'February 14, 2023' },
+            7: { location: { lat: 30.3322, lng: -81.6557 }, city: 'Jacksonville, FL', date: 'May 18, 2023' },
+            8: { location: { lat: 30.3322, lng: -81.6557 }, city: 'Jacksonville, FL', date: 'May 18, 2023' },
+            9: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'July 8, 2023' },
+            10: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'December 1, 2022' },
+            11: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'September 22, 2023' },
+            12: { location: { lat: 8.9824, lng: -79.5199 }, city: 'Panama City, Panama', date: 'February 15, 2023' },
+            13: { location: { lat: 30.4518, lng: -84.27277 }, city: 'Tallahassee, FL', date: 'November 25, 2022' }
+          };
+          
+          const data = locationData[memory.id] || { 
+            location: { lat: 30.4518, lng: -84.27277 }, 
+            city: 'Tallahassee, FL', 
+            date: 'Date Unknown' 
+          };
+          
+          return {
+            ...memory,
+            ...data
+          };
+        });
 
         // Sort memories chronologically based on extracted dates
         const sortedMemories = memoriesWithMetadata.sort((a, b) => {
