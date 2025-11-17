@@ -1,7 +1,26 @@
 steps:
-  # Build the Docker image
+  # Re-clone the repo with full history + LFS
+  - name: 'gcr.io/cloud-builders/git'
+    args:
+      - clone
+      - --recurse-submodules
+      - --depth=0
+      - https://github.com/slicedkiwis/AlanahsBirthday.git
+      - fullrepo
+
+  # Enter the repo and pull LFS
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        cd fullrepo
+        git lfs install
+        git lfs pull
+
+  # Build Docker image using the full repo WITH LFS
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/alanahs-birthday:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/alanahs-birthday:$COMMIT_SHA', 'fullrepo']
   
   # Push the image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
