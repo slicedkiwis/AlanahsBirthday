@@ -9,8 +9,14 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
+# Install Git & LFS and enable it
+RUN apk add --no-cache git git-lfs && git lfs install
+
 # Copy source code
 COPY . .
+
+# Pull actual LFS objects
+RUN git lfs pull
 
 # Set API key directly
 ENV REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyDTyBgvYaBVGYJR0jZixVMJf-kbbHaIuFs
