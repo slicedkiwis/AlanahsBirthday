@@ -61,14 +61,24 @@ function MemoryTimeline({ memories, selectedMemory, onMemorySelect, completedMem
               </div>
 
               <div className="timeline-content">
-                <div 
-                  className="timeline-thumbnail"
-                  style={{ 
-                    backgroundImage: `url(${memory.image})`,
-                    opacity: isCompleted ? 1 : 0.3,
-                    filter: isCompleted ? 'none' : 'grayscale(100%)'
-                  }}
-                />
+                <div className="timeline-thumbnail">
+                  <img 
+                    src={memory.image} 
+                    alt={memory.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '10px',
+                      opacity: isCompleted ? 1 : 0.3,
+                      filter: isCompleted ? 'none' : 'grayscale(100%)'
+                    }}
+                    onError={(e) => {
+                      console.log('Image failed to load:', memory.image);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
                 
                 <div className="timeline-info">
                   <h4 className="timeline-title">{memory.title}</h4>
